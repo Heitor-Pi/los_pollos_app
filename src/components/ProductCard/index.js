@@ -1,6 +1,5 @@
 import { Image, Pressable, Text, View } from "react-native";
-import { colors } from "../../themes/colors";
-import { AppIcon } from "../AppIcon";
+import iconPlus from "../../assets/images/icons/icon_plus.png";
 import { styles } from "./style";
 
 export const ProductCard = ({ image, title, description, price, onPress }) => {
@@ -19,7 +18,7 @@ export const ProductCard = ({ image, title, description, price, onPress }) => {
         <View style={styles.footerRow}>
           <Text style={styles.priceProduct}>{price}</Text>
           <Pressable style={styles.btnAdd} onPress={onPress}>
-            <AppIcon name="plus" size={13} color={colors.colorWhite} />
+            <Image source={iconPlus} style={styles.iconPlus} resizeMode="contain" />
           </Pressable>
         </View>
       </View>

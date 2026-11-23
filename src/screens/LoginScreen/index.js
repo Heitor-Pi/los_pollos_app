@@ -3,7 +3,7 @@ import { Image, Pressable, ScrollView, Text, TextInput, View } from "react-nativ
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import logo from "../../assets/images/logo.png";
-import { AppIcon } from "../../components/AppIcon";
+import iconProfile from "../../assets/images/icons/icon_profile.png";
 import { ButtonOutline } from "../../components/ButtonOutline";
 import { ButtonPrimary } from "../../components/ButtonPrimary";
 import { colors } from "../../themes/colors";
@@ -31,7 +31,9 @@ export const LoginScreen = () => {
 
         <View style={styles.formSection}>
           <View style={styles.inputBox}>
-            <AppIcon name="mail" size={18} color={colors.colorGray} />
+            <View style={styles.mailIconBox}>
+              <View style={styles.mailFlap} />
+            </View>
             <TextInput
               style={styles.input}
               placeholder="Digite seu e-mail"
@@ -44,7 +46,7 @@ export const LoginScreen = () => {
           </View>
 
           <View style={styles.inputBox}>
-            <AppIcon name="lock" size={18} color={colors.colorRed} />
+            <View style={styles.passwordDot} />
             <TextInput
               style={styles.input}
               placeholder="Digite sua senha"
@@ -76,7 +78,11 @@ export const LoginScreen = () => {
           </View>
 
           <Pressable style={styles.visitorBtn} onPress={handleEnter}>
-            <AppIcon name="profile" size={16} color={colors.colorGray} />
+            <Image
+              source={iconProfile}
+              style={styles.visitorIcon}
+              resizeMode="contain"
+            />
             <Text style={styles.visitorText}>Continuar como visitante</Text>
           </Pressable>
         </View>

@@ -4,9 +4,11 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import comboChickenImg from "../../assets/images/combo_chicken.jpg";
 import logo from "../../assets/images/logo.png";
-import { AppIcon } from "../../components/AppIcon";
+import iconBack from "../../assets/images/icons/icon_back.png";
+import iconHeart from "../../assets/images/icons/icon_heart.png";
+import iconMinus from "../../assets/images/icons/icon_minus.png";
+import iconPlus from "../../assets/images/icons/icon_plus.png";
 import { ButtonPrimary } from "../../components/ButtonPrimary";
-import { colors } from "../../themes/colors";
 import { styles } from "./style";
 
 export const ProductDetailsScreen = () => {
@@ -59,7 +61,11 @@ export const ProductDetailsScreen = () => {
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.headerRow}>
         <Pressable style={styles.headerBtn} onPress={() => navigation.goBack()}>
-          <AppIcon name="back" size={20} color={colors.colorRed} />
+          <Image
+            source={iconBack}
+            style={styles.backIcon}
+            resizeMode="contain"
+          />
         </Pressable>
 
         <Text style={styles.headerTitle}>Detalhes do produto</Text>
@@ -69,12 +75,15 @@ export const ProductDetailsScreen = () => {
             style={styles.headerBtn}
             onPress={() => setIsFavorite((prev) => !prev)}
           >
-            <AppIcon
-              name="heart"
-              size={22}
-              color={colors.colorRed}
-              filled={isFavorite}
-            />
+            {isFavorite ? (
+              <Text style={styles.heartFilled}>♥</Text>
+            ) : (
+              <Image
+                source={iconHeart}
+                style={styles.heartIcon}
+                resizeMode="contain"
+              />
+            )}
           </Pressable>
           <Image source={logo} style={styles.miniLogo} resizeMode="contain" />
         </View>
@@ -153,14 +162,22 @@ export const ProductDetailsScreen = () => {
               style={styles.counterBtn}
               onPress={() => setQuantity((q) => Math.max(1, q - 1))}
             >
-              <AppIcon name="minus" size={12} color={colors.colorRed} />
+              <Image
+                source={iconMinus}
+                style={styles.minusIcon}
+                resizeMode="contain"
+              />
             </Pressable>
             <Text style={styles.counterValue}>{quantity}</Text>
             <Pressable
               style={styles.counterBtn}
               onPress={() => setQuantity((q) => q + 1)}
             >
-              <AppIcon name="plus" size={13} color={colors.colorRed} />
+              <Image
+                source={iconPlus}
+                style={styles.plusIcon}
+                resizeMode="contain"
+              />
             </Pressable>
           </View>
         </View>

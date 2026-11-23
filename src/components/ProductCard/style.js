@@ -47,10 +47,8 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  txtBtnAdd: {
-    color: colors.colorWhite,
-    fontSize: 18,
-    fontWeight: "700",
-    lineHeight: 20,
+  iconPlus: {
+    width: 13,
+    height: 13,
   },
 });

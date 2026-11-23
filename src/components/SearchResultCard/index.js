@@ -1,6 +1,5 @@
 import { Image, Pressable, Text, View } from "react-native";
-import { colors } from "../../themes/colors";
-import { AppIcon } from "../AppIcon";
+import iconHeart from "../../assets/images/icons/icon_heart.png";
 import { styles } from "./style";
 
 export const SearchResultCard = ({
@@ -25,12 +24,15 @@ export const SearchResultCard = ({
       </View>
 
       <Pressable style={styles.heartBtn} onPress={onToggleFavorite}>
-        <AppIcon
-          name="heart"
-          size={20}
-          color={colors.colorRed}
-          filled={isFavorite}
-        />
+        {isFavorite ? (
+          <Text style={styles.heartFilled}>♥</Text>
+        ) : (
+          <Image
+            source={iconHeart}
+            style={styles.heartIcon}
+            resizeMode="contain"
+          />
+        )}
       </Pressable>
     </Pressable>
   );

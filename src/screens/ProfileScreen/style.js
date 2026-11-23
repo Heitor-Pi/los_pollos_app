@@ -29,6 +29,11 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     gap: 10,
   },
+  gearIcon: {
+    width: 20,
+    height: 20,
+    tintColor: colors.colorGray,
+  },
   miniLogo: {
     width: 34,
     height: 34,

@@ -8,7 +8,8 @@ import familiaImg from "../../assets/images/familia.jpg";
 import chickenBurgerImg from "../../assets/images/chicken_burguer.jpg";
 import batataImg from "../../assets/images/batata.jpg";
 import comboChickenImg from "../../assets/images/combo_chicken.jpg";
-import { AppIcon } from "../../components/AppIcon";
+import iconSearch from "../../assets/images/icons/icon_search.png";
+import iconClose from "../../assets/images/icons/icon_close.png";
 import { BottomNav } from "../../components/BottomNav";
 import { SearchResultCard } from "../../components/SearchResultCard";
 import { colors } from "../../themes/colors";
@@ -139,7 +140,11 @@ export const SearchScreen = () => {
         </View>
 
         <View style={styles.searchBox}>
-          <AppIcon name="search" size={18} color={colors.colorRed} />
+          <Image
+            source={iconSearch}
+            style={styles.searchIcon}
+            resizeMode="contain"
+          />
           <TextInput
             style={styles.searchInput}
             placeholder="Buscar no cardápio..."
@@ -158,7 +163,11 @@ export const SearchScreen = () => {
                 setSelectedCategory(null);
               }}
             >
-              <AppIcon name="close" size={18} color={colors.colorGray} />
+              <Image
+                source={iconClose}
+                style={styles.closeIcon}
+                resizeMode="contain"
+              />
             </Pressable>
           ) : null}
         </View>

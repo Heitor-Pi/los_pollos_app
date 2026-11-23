@@ -18,6 +18,19 @@ export const styles = StyleSheet.create({
   headerBtn: {
     padding: 4,
   },
+  backIcon: {
+    width: 18,
+    height: 18,
+  },
+  heartIcon: {
+    width: 22,
+    height: 22,
+  },
+  heartFilled: {
+    fontSize: 22,
+    color: colors.colorRed,
+    lineHeight: 24,
+  },
   headerTitle: {
     fontSize: 16,
     fontWeight: "700",
@@ -156,10 +169,14 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  counterBtnTextRed: {
-    fontSize: 18,
-    fontWeight: "700",
-    color: colors.colorRed,
+  minusIcon: {
+    width: 12,
+    height: 12,
+  },
+  plusIcon: {
+    width: 13,
+    height: 13,
+    tintColor: colors.colorRed,
   },
   counterValue: {
     fontSize: 16,

@@ -40,4 +40,13 @@ export const styles = StyleSheet.create({
     padding: 6,
     alignSelf: "flex-start",
   },
+  heartIcon: {
+    width: 20,
+    height: 20,
+  },
+  heartFilled: {
+    fontSize: 20,
+    color: colors.colorRed,
+    lineHeight: 22,
+  },
 });

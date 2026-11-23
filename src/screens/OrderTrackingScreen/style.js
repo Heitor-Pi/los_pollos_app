@@ -18,6 +18,10 @@ export const styles = StyleSheet.create({
   backBtn: {
     padding: 4,
   },
+  backIcon: {
+    width: 18,
+    height: 18,
+  },
   pageTitle: {
     flex: 1,
     marginLeft: 8,
@@ -188,6 +192,11 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+  destArrow: {
+    fontSize: 16,
+    fontWeight: "700",
+    color: colors.colorRed,
+  },
   statusCard: {
     flex: 1,
     backgroundColor: colors.colorWhite,
@@ -311,6 +320,10 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+  phoneIcon: {
+    width: 20,
+    height: 20,
+  },
   detailsBtn: {
     flexDirection: "row",
     alignItems: "center",
@@ -324,6 +337,11 @@ export const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: "700",
     color: colors.colorDark,
+  },
+  detailsArrow: {
+    fontSize: 16,
+    fontWeight: "700",
+    color: colors.colorRed,
   },
   orderSummaryBox: {
     backgroundColor: colors.colorCream,

@@ -39,6 +39,11 @@ export const styles = StyleSheet.create({
     height: 46,
     gap: 10,
   },
+  searchIcon: {
+    width: 18,
+    height: 18,
+    tintColor: colors.colorRed,
+  },
   searchInput: {
     flex: 1,
     fontSize: 14,
@@ -46,6 +51,10 @@ export const styles = StyleSheet.create({
   },
   clearBtn: {
     padding: 4,
+  },
+  closeIcon: {
+    width: 14,
+    height: 14,
   },
   sectionBlock: {
     gap: 10,

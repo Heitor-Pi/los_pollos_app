@@ -9,11 +9,11 @@ import frangosIcon from "../../assets/images/icons/frangos.png";
 import combosIcon from "../../assets/images/icons/combos.png";
 import batatasIcon from "../../assets/images/icons/batatas.png";
 import bebidasIcon from "../../assets/images/icons/bebidas.png";
-import { AppIcon } from "../../components/AppIcon";
+import iconCart from "../../assets/images/icons/icon_cart.png";
+import iconSearch from "../../assets/images/icons/icon_search.png";
 import { BottomNav } from "../../components/BottomNav";
 import { CategoryCard } from "../../components/CategoryCard";
 import { ProductCard } from "../../components/ProductCard";
-import { colors } from "../../themes/colors";
 import { styles } from "./style";
 
 export const HomeScreen = () => {
@@ -68,7 +68,11 @@ export const HomeScreen = () => {
             style={styles.cartBtn}
             onPress={() => navigation.navigate("tracking")}
           >
-            <AppIcon name="cart" size={22} color={colors.colorRed} />
+            <Image
+              source={iconCart}
+              style={styles.cartIcon}
+              resizeMode="contain"
+            />
           </Pressable>
         </View>
 
@@ -76,7 +80,11 @@ export const HomeScreen = () => {
           style={styles.searchBar}
           onPress={() => navigation.navigate("search")}
         >
-          <AppIcon name="search" size={18} color={colors.colorRed} />
+          <Image
+            source={iconSearch}
+            style={styles.searchIcon}
+            resizeMode="contain"
+          />
           <Text style={styles.searchPlaceholder}>Buscar no cardápio...</Text>
         </Pressable>
 

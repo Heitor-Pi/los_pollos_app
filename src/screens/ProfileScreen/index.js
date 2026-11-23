@@ -2,11 +2,16 @@ import { Image, ScrollView, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import logo from "../../assets/images/logo.png";
-import { AppIcon } from "../../components/AppIcon";
+import iconSettings from "../../assets/images/icons/icon_settings.png";
+import iconOrders from "../../assets/images/icons/icon_orders.png";
+import iconDiamond from "../../assets/images/icons/icon_diamond.png";
+import iconCard from "../../assets/images/icons/icon_card.png";
+import iconClover from "../../assets/images/icons/icon_clover.png";
+import iconHelp from "../../assets/images/icons/icon_help.png";
+import iconInfo from "../../assets/images/icons/icon_info.png";
 import { BottomNav } from "../../components/BottomNav";
 import { ButtonOutline } from "../../components/ButtonOutline";
 import { ProfileMenuItem } from "../../components/ProfileMenuItem";
-import { colors } from "../../themes/colors";
 import { styles } from "./style";
 
 export const ProfileScreen = () => {
@@ -14,16 +19,16 @@ export const ProfileScreen = () => {
 
   const menuItems = [
     {
-      icon: "orders",
+      icon: iconOrders,
       label: "Meus pedidos",
       onPress: () => navigation.navigate("tracking"),
     },
-    { icon: "address", label: "Endereços de entrega" },
-    { icon: "card", label: "Formas de pagamento" },
-    { icon: "coupon", label: "Cupons e promoções" },
-    { icon: "bell", label: "Notificações" },
-    { icon: "help", label: "Ajuda e suporte" },
-    { icon: "info", label: "Sobre o app" },
+    { icon: iconDiamond, label: "Endereços de entrega" },
+    { icon: iconCard, label: "Formas de pagamento" },
+    { icon: iconDiamond, label: "Cupons e promoções" },
+    { icon: iconClover, label: "Notificações" },
+    { icon: iconHelp, label: "Ajuda e suporte" },
+    { icon: iconInfo, label: "Sobre o app" },
   ];
 
   return (
@@ -32,7 +37,11 @@ export const ProfileScreen = () => {
         <View style={styles.headerRow}>
           <Text style={styles.pageTitle}>Meu perfil</Text>
           <View style={styles.headerRight}>
-            <AppIcon name="gear" size={20} color={colors.colorGray} />
+            <Image
+              source={iconSettings}
+              style={styles.gearIcon}
+              resizeMode="contain"
+            />
             <Image source={logo} style={styles.miniLogo} resizeMode="contain" />
           </View>
         </View>
@@ -53,7 +62,7 @@ export const ProfileScreen = () => {
           {menuItems.map((item) => (
             <ProfileMenuItem
               key={item.label}
-              iconName={item.icon}
+              icon={item.icon}
               label={item.label}
               onPress={item.onPress}
             />

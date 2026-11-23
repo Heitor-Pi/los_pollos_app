@@ -18,9 +18,19 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     gap: 12,
   },
+  itemIcon: {
+    width: 18,
+    height: 18,
+    tintColor: colors.colorRed,
+  },
   itemLabel: {
     fontSize: 14,
     fontWeight: "600",
     color: colors.colorDark,
+  },
+  arrowRight: {
+    fontSize: 16,
+    fontWeight: "600",
+    color: colors.colorGray,
   },
 });

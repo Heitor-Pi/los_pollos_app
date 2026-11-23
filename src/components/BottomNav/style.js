@@ -19,6 +19,10 @@ export const styles = StyleSheet.create({
     gap: 4,
     minWidth: 64,
   },
+  navIcon: {
+    width: 20,
+    height: 20,
+  },
   navLabel: {
     fontSize: 11,
     fontWeight: "600",

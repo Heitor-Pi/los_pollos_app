@@ -1,17 +1,20 @@
-import { Pressable, Text, View } from "react-native";
+import { Image, Pressable, Text, View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import iconHome from "../../assets/images/icons/icon_home.png";
+import iconSearch from "../../assets/images/icons/icon_search.png";
+import iconOrders from "../../assets/images/icons/icon_orders.png";
+import iconProfile from "../../assets/images/icons/icon_profile.png";
 import { colors } from "../../themes/colors";
-import { AppIcon } from "../AppIcon";
 import { styles } from "./style";
 
 export const BottomNav = ({ active }) => {
   const navigation = useNavigation();
 
   const tabs = [
-    { key: "home", label: "Início", icon: "home", route: "home" },
-    { key: "search", label: "Pesquisa", icon: "search", route: "search" },
-    { key: "tracking", label: "Pedidos", icon: "orders", route: "tracking" },
-    { key: "profile", label: "Perfil", icon: "profile", route: "profile" },
+    { key: "home", label: "Início", icon: iconHome, route: "home" },
+    { key: "search", label: "Pesquisa", icon: iconSearch, route: "search" },
+    { key: "tracking", label: "Pedidos", icon: iconOrders, route: "tracking" },
+    { key: "profile", label: "Perfil", icon: iconProfile, route: "profile" },
   ];
 
   return (
@@ -26,7 +29,11 @@ export const BottomNav = ({ active }) => {
             style={styles.navItem}
             onPress={() => navigation.navigate(tab.route)}
           >
-            <AppIcon name={tab.icon} size={20} color={itemColor} />
+            <Image
+              source={tab.icon}
+              style={[styles.navIcon, { tintColor: itemColor }]}
+              resizeMode="contain"
+            />
             <Text style={[styles.navLabel, isActive && styles.navLabelActive]}>
               {tab.label}
             </Text>

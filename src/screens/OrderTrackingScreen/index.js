@@ -3,8 +3,8 @@ import { Image, Pressable, ScrollView, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import logo from "../../assets/images/logo.png";
-import { AppIcon } from "../../components/AppIcon";
-import { colors } from "../../themes/colors";
+import iconBack from "../../assets/images/icons/icon_back.png";
+import iconPhone from "../../assets/images/icons/icon_phone.png";
 import { styles } from "./style";
 
 export const OrderTrackingScreen = () => {
@@ -22,7 +22,11 @@ export const OrderTrackingScreen = () => {
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.headerRow}>
         <Pressable style={styles.backBtn} onPress={() => navigation.goBack()}>
-          <AppIcon name="back" size={18} color={colors.colorRed} />
+          <Image
+            source={iconBack}
+            style={styles.backIcon}
+            resizeMode="contain"
+          />
         </Pressable>
         <Text style={styles.pageTitle}>Acompanhe seu pedido</Text>
         <Image source={logo} style={styles.miniLogo} resizeMode="contain" />
@@ -62,7 +66,7 @@ export const OrderTrackingScreen = () => {
 
           {/* Destination pin */}
           <View style={styles.destPin}>
-            <AppIcon name="arrowUpRight" size={18} color={colors.colorRed} />
+            <Text style={styles.destArrow}>↗</Text>
           </View>
         </View>
 
@@ -107,7 +111,11 @@ export const OrderTrackingScreen = () => {
               </View>
 
               <Pressable style={styles.chatBtn}>
-                <AppIcon name="phone" size={18} color={colors.colorRed} />
+                <Image
+                  source={iconPhone}
+                  style={styles.phoneIcon}
+                  resizeMode="contain"
+                />
               </Pressable>
             </View>
           </View>
@@ -117,7 +125,7 @@ export const OrderTrackingScreen = () => {
             onPress={() => setShowDetails((prev) => !prev)}
           >
             <Text style={styles.detailsBtnText}>Detalhes do pedido</Text>
-            <AppIcon name="chevronRight" size={16} color={colors.colorRed} />
+            <Text style={styles.detailsArrow}>&gt;</Text>
           </Pressable>
 
           {showDetails ? (

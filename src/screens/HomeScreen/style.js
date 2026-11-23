@@ -39,6 +39,10 @@ export const styles = StyleSheet.create({
   cartBtn: {
     padding: 6,
   },
+  cartIcon: {
+    width: 22,
+    height: 22,
+  },
   searchBar: {
     flexDirection: "row",
     alignItems: "center",
@@ -49,6 +53,11 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 14,
     height: 46,
     gap: 10,
+  },
+  searchIcon: {
+    width: 18,
+    height: 18,
+    tintColor: colors.colorRed,
   },
   searchPlaceholder: {
     fontSize: 14,
