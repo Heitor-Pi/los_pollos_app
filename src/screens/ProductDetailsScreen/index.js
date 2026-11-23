@@ -153,14 +153,14 @@ export const ProductDetailsScreen = () => {
               style={styles.counterBtn}
               onPress={() => setQuantity((q) => Math.max(1, q - 1))}
             >
-              <Text style={styles.counterBtnTextRed}>-</Text>
+              <AppIcon name="minus" size={12} color={colors.colorRed} />
             </Pressable>
             <Text style={styles.counterValue}>{quantity}</Text>
             <Pressable
               style={styles.counterBtn}
               onPress={() => setQuantity((q) => q + 1)}
             >
-              <Text style={styles.counterBtnTextRed}>+</Text>
+              <AppIcon name="plus" size={13} color={colors.colorRed} />
             </Pressable>
           </View>
         </View>

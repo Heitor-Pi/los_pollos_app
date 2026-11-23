@@ -107,7 +107,7 @@ export const OrderTrackingScreen = () => {
               </View>
 
               <Pressable style={styles.chatBtn}>
-                <AppIcon name="chat" size={18} color={colors.colorRed} />
+                <AppIcon name="phone" size={18} color={colors.colorRed} />
               </Pressable>
             </View>
           </View>
